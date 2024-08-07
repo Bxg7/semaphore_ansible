@@ -6,7 +6,7 @@
     with_items:
     - apache2
     register: result
-    ignore_errors: yes
+    ignore_errors: no
   - name: showing report
     debug:
      var: result

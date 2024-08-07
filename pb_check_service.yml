@@ -1,9 +1,12 @@
----
-
-- name: Get Service Status
-  ansible.builtin.systemd:
-    name: "apache2"
-  register: apache_service_status
-
-- debug:
-    var: apache_service_status.status.ActiveState
+- name: checking service status
+  hosts: ubuntu
+  tasks:
+  - name: checking service status
+    command: systemctl status "{{ item }}"
+    with_items:
+    - apache2
+    register: result
+    ignore_errors: yes
+  - name: showing report
+    debug:
+     var: result

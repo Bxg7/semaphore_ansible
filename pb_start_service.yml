@@ -2,7 +2,7 @@
   hosts: ubuntu
   tasks:
   - name: starting
-    command: systemctl start "{{ item }}"
+    command: sudo systemctl start "{{ item }}"
     with_items:
     - apache2
     register: result

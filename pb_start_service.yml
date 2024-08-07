@@ -1,0 +1,12 @@
+- name: starting service 
+  hosts: ubuntu
+  tasks:
+  - name: starting
+    command: systemctl start "{{ item }}"
+    with_items:
+    - apache2
+    register: result
+    ignore_errors: no
+  - name: showing report
+    debug:
+     var: result

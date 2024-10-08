@@ -1,3 +1,4 @@
-- ansible.builtin.debug:
-    hosts: 192.168.192.20
-    msg: "the value of the rsync backup is {{ lookup('ansible.builtin.file', '/root/rsynclogs/rsync-backup-j-2024-10-08.log') }}"
+- name: Check backup log
+    - ansible.builtin.debug:
+        hosts: 192.168.192.20
+        msg: "the value of the rsync backup is {{ lookup('ansible.builtin.file', '/root/rsynclogs/rsync-backup-j-2024-10-08.log') }}"

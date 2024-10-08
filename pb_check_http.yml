@@ -1,5 +1,5 @@
 - name: checking service status
-  hosts: ubuntu
+  hosts: nextcloud.local
   tasks:
   - name: Check if Nextcloud is still running
     ansible.builtin.wait_for:

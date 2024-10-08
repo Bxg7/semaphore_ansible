@@ -4,7 +4,7 @@
   - name: checking service status
     command: systemctl status "{{ item }}"
     with_items:
-    - apache2
+    - nextcloud
     register: result
     ignore_errors: no
   - name: showing report

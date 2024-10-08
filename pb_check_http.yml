@@ -1,3 +1,5 @@
+---
+
 - name: Wait for 200s for HTTP server to load on port 80
   ansible.builtin.wait_for:
     port: 80                                    # Check for port 80

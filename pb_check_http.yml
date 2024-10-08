@@ -1,9 +1,4 @@
 ---
-
-- name: Wait for 200s for HTTP server to load on port 80
-  ansible.builtin.wait_for:
-    port: 80                                    # Check for port 80
-    delay: 10                                   # check only after 10s
-    timeout: 200                                # Only wait for 200s. Default is 300
-    msg: "HTTP Timeout on port 80. No response" # Show custom message on failure
-  register: port_check
+- name: Check that you can connect (GET) to a page and it returns a status 200
+  ansible.builtin.uri:
+    url: https://nextcloud.local

@@ -1,5 +1,5 @@
 - name: Wait for 200s for HTTP server to load on port 80
-  wait_for:
+  ansible.builtin.wait_for:
     port: 80                                    # Check for port 80
     delay: 10                                   # check only after 10s
     timeout: 200                                # Only wait for 200s. Default is 300

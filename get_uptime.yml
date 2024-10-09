@@ -1,6 +1,15 @@
-- name: Slurp hosts file
-  slurp:
-    src: /etc/hosts
-  register: slurpfile
+---
+- hosts: all
+  become: false
+  gather_facts: false
 
-- debug: msg="{{ slurpfile['content'] | b64decode }}"
+  tasks:
+
+  - name: Extract PS output.
+    shell: 
+      cmd: "ps -ef | grep pmon"
+    register: pmon
+
+  - name: Display PS output.
+    debug:
+      msg: "{{ pmon.stdout_lines }}"

@@ -2,7 +2,7 @@
   hosts: all
   tasks:
     - name: Read yaml file from host
-      ansible.builtin.command: cat /home/jelle/rsynclogs/*.log
+      ansible.builtin.command: cat /home/jelle/rsynclogs/rsync-backup-j-$(date +"%Y-%m-%d").log
       register: command_result
 
     - name: Print result

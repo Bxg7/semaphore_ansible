@@ -1,8 +1,8 @@
 ---
 - hosts: all
-  become: true
+  become: yes
+  become_user: root
   become_method: su
-  gather_facts: false
   
   tasks:
 

@@ -1,6 +1,6 @@
-- name: display multiple file contents
-  hosts: all
-  ansible.builtin.debug: var=item
-  with_file:
-    - "/root/rsynclogs/rsync-backup-j-2024-10-08.log"
-    - "/root/backup.sh"  # will be looked in files/ dir relative to play or in role
+- name: Slurp hosts file
+  slurp:
+    src: /etc/hosts
+  register: slurpfile
+
+- debug: msg="{{ slurpfile['content'] | b64decode }}"

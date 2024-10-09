@@ -1,15 +1,13 @@
 ---
 - hosts: all
-  become: false
+  become: true
   gather_facts: false
 
   tasks:
 
   - name: Extract PS output.
     shell: 
-      cmd: "ps -ef | grep pmon"
-    register: pmon
+      cmd: "cat /root/rsynclogs/rsync-backup*.log"
+    register: rsy
 
-  - name: Display PS output.
-    debug:
-      msg: "{{ pmon.stdout_lines }}"
+

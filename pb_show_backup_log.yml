@@ -1,9 +1,9 @@
 ---
 - hosts: all  
   tasks:
-  - name: Slurp hosts file
+  - name: Slurp the rsync backup log
     slurp:
-      src: /home/jelle/rsynclogs/rsync-backup-j-2024-10-09.log
+      src: /home/jelle/rsynclogs/rsync.log
     register: slurpfile
 
   - debug: msg="{{ slurpfile['content'] | b64decode }}"

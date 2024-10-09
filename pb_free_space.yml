@@ -1,22 +1,22 @@
-- name: Free-space.yml Date
-  command: date
-
-- name: Display more vars
-  debug:
-    msg:
-    - "Variable list"
-    - "diskfree_req is:  '{{diskfree_req}}' "
-    - "mountname is:     '{{mountname}}' "
-
-- name: PreTest for freespace
-  vars: 
-    deprecation_warnings: False
-    #mountname: '/opt/oracle'
-    mount: "{{ ansible_mounts | selectattr('mount','equalto', mountname) | first }}"
-
-  assert:
-    that: mount.size_available > {{diskfree_req}}
-    msg: 
-    - "DANGER : disk space is low"
-    - "'{{mountname}} only has {{mount.size_available}} available. Please correct"
-  register: disk_free
+  - name: Free-space.yml Date
+    command: date
+  
+  - name: Display more vars
+    debug:
+      msg:
+      - "Variable list"
+      - "diskfree_req is:  '{{diskfree_req}}' "
+      - "mountname is:     '{{mountname}}' "
+  
+  - name: PreTest for freespace
+    vars: 
+      deprecation_warnings: False
+      #mountname: '/opt/oracle'
+      mount: "{{ ansible_mounts | selectattr('mount','equalto', mountname) | first }}"
+  
+    assert:
+      that: mount.size_available > {{diskfree_req}}
+      msg: 
+      - "DANGER : disk space is low"
+      - "'{{mountname}} only has {{mount.size_available}} available. Please correct"
+    register: disk_free

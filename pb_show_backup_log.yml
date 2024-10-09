@@ -3,7 +3,7 @@
   tasks:
   - name: Slurp the rsync backup log
     slurp:
-      src: /home/jelle/rsynclogs/rsync.log
+      src: $HOME/rsynclogs/rsync.log
     register: slurpfile
 
   - debug: msg="{{ slurpfile['content'] | b64decode }}"

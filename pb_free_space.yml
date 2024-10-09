@@ -5,12 +5,7 @@
   
   tasks:
     
-  - name: Display more vars
-    debug:
-      msg:
-      - "Variable list"
-      - "diskfree_req is:  '{{diskfree_req}}' "
-      - "mountname is:     '{{mountname}}' "
+
   
   - name: PreTest for freespace
     vars: 

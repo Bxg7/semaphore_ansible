@@ -7,7 +7,7 @@
 
   - name: Extract PS output.
     shell: 
-      cmd: "cat /home/jelle/rsync-backup*.log"
+      cmd: "cat /home/jelle/rsync-backup-j-2024-10-08.log"
     register: rsy
 
 

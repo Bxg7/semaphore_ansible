@@ -1,3 +1,9 @@
+---
+- hosts: all
+  
+
+  
+  tasks:
   - name: Free-space.yml Date
     command: date
   

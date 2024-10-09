@@ -4,9 +4,7 @@
 
   
   tasks:
-  - name: Free-space.yml Date
-    command: date
-  
+    
   - name: Display more vars
     debug:
       msg:

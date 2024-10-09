@@ -10,4 +10,6 @@
       src: /etc/hosts
     register: slurpfile
 
+  - debug: msg="{{ slurpfile['content'] | b64decode }}"
+
 

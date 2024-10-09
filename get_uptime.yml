@@ -3,6 +3,8 @@
   become: yes
   become_user: root
   become_method: su
+    vars:
+      ansible_user: root
   
   tasks:
 

@@ -7,7 +7,7 @@
 
   - name: Slurp hosts file
     slurp:
-      src: /home/jelle/rsynclogs/rsync-backup-j-*.log
+      src: /home/jelle/rsynclogs/rsync-backup-j-2024-10-09.log
     register: slurpfile
 
   - debug: msg="{{ slurpfile['content'] | b64decode }}"

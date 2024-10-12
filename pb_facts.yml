@@ -6,4 +6,4 @@
   tasks:
    - name: Display system information
      debug:
-      msg: "System: {{ ansible_facts['system'] }}"
+      msg: "System: {{ ansible_facts['cmdline'] }}"

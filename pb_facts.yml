@@ -6,4 +6,4 @@
   tasks:
    - name: Display system information
      debug:
-      msg: "System: {{ ansible_facts['ansible_mounts'] }}"
+      msg: "System: {{ ansible_facts['mounts'] }}"

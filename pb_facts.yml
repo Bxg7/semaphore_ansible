@@ -1,6 +1,6 @@
 ---
 - name: Example Playbook
-  hosts: your_target_hosts
+  hosts: all
   gather_facts: true  # This is the default, but explicitly mentioning it here for clarity
 
   tasks:

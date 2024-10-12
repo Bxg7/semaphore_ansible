@@ -1,11 +1,12 @@
 - name: apt update
   hosts: all
   become: true
+- shell: ls
+        register: apt_result
   tasks:
   - name: Run updates
     apt:
       upgrade: yes
-  - shell: ls
-        register: apt_result
+  
   - debug:
           var: apt_result.stderr

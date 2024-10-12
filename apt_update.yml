@@ -1,9 +1,10 @@
 - name: apt update
   hosts: all
   become: true
-- shell: ls
-        register: apt_result
+
   tasks:
+  - shell: ls
+    register: apt_result
   - name: Run updates
     apt:
       upgrade: yes

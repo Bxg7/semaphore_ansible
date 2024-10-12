@@ -3,6 +3,4 @@
   become: true
   tasks:
   - name: Run updates
-    ansible.builtin.apt:
-     name: "*"
-     state: latest
+    apt: state=latest force_apt_get=yes

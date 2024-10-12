@@ -1,9 +1,10 @@
 ---
 - hosts: all  
+  become: true
   tasks:
   - name: Slurp the rsync backup log
     slurp:
-      src: $HOME/rsynclogs/rsync.log
+      src: /root/rsynclogs/rsync-backup-f-$(date +"%Y-%m-%d").log
     register: slurpfile
 
   - debug: msg="{{ slurpfile['content'] | b64decode }}"

@@ -1,8 +1,14 @@
----
 - name: zzzz
   hosts: backupserver  
   become: true
   tasks:
   
-    ansible.builtin.debug:
-    var: ansible_facts
+    
+
+---
+- hosts: backupserver  
+  become: true
+  tasks:
+  - name: zzzz
+      ansible.builtin.debug:
+      var: ansible_facts

@@ -1,9 +1,0 @@
-- name: apt update
-  hosts: all
-  become: true
-
-  tasks:
-  
-  - name: Run updates
-    apt:
-      upgrade: yes

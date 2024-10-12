@@ -1,6 +1,10 @@
-- hosts: backupserver  
-  become: true
+- hosts: all
   tasks:
-  - name: zzzz
-      ansible.builtin.debug:
-      var: ansible_facts
+  - package:
+      name: "httpd"
+      state: present
+    when ansible_facts["os_name"] == "RedHat"
+  - package:
+      name: "apache2"
+      state: present
+    when ansible_facts["os_name"] == "Ubuntu"

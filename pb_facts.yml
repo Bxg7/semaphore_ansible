@@ -1,10 +1,9 @@
-- hosts: all
+---
+- name: Example Playbook
+  hosts: your_target_hosts
+  gather_facts: true  # This is the default, but explicitly mentioning it here for clarity
+
   tasks:
-  - package:
-      name: "httpd"
-      state: present
-    when ansible_facts["os_name"] == "RedHat"
-  - package:
-      name: "apache2"
-      state: present
-    when ansible_facts["os_name"] == "Ubuntu"
+   - name: Display system information
+     debug:
+      msg: "System: {{ ansible_facts['system'] }}"

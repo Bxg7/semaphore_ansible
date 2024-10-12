@@ -1,3 +1,6 @@
+- name: whatever
+  become: true
+
 - set_fact:
     mount: "{{ ansible_mounts | first }}"
                                                                                                                         

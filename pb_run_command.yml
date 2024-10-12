@@ -1,6 +1,6 @@
 ---
 - name: Download Apache source file to /usr/local/src directory
-  hosts: all
-  tasks:
-  	- name: Download Apache tarball file
-      shell: wget https://dlcdn.apache.org/httpd/httpd-2.4.52.tar.gz
+hosts: all
+tasks:
+- name: Download Apache tarball file
+  shell: wget https://dlcdn.apache.org/httpd/httpd-2.4.52.tar.gz

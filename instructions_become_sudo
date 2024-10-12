@@ -1,0 +1,6 @@
+1. Create new key at key store: https://demo.ansible-semaphore.com/project/1/keys. Call it for example "become_password". Type = "Login with password". DO NOT enter "Login (optional)", just leave it blank. Enter sudo password in field "password".
+
+2. Create Inventory (https://demo.ansible-semaphore.com/project/1/inventory) and assign "Become_password" to field "Sudo credentials (optional)"
+
+3. Create new task (https://demo.ansible-semaphore.com/project/1/templates) and assign inventory.
+   your script run fine now.

@@ -1,8 +1,8 @@
----
-- hosts: all
-  become: yes
-
-- name: Update all Debian/Ubuntu packages to their latest version
-  ansible.builtin.apt:
-    name: "*"
-    state: latest
+- name: apt update
+  hosts: all
+  become: true
+  tasks:
+  - name: Run updates
+    ansible.builtin.apt:
+     name: "*"
+     state: latest

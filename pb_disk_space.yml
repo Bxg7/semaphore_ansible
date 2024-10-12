@@ -1,9 +1,9 @@
----
 - name: Check if available memory is above 500 mb
   hosts: all
   become: true
-  ansible.builtin.debug:
-    msg: "Disks space for the {{ item.mount }} is {{ item.size_available / (1024 * 1024) }} MBytes"
-    when: item.mount == "/"
-    loop: "{{ ansible_facts['mounts'] }}"
+  tasks:
+    ansible.builtin.debug:
+      msg: "Disks space for the {{ item.mount }} is {{ item.size_available / (1024 * 1024) }} MBytes"
+      when: item.mount == "/"
+      loop: "{{ ansible_facts['mounts'] }}"
 

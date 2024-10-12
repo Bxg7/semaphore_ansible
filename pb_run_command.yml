@@ -8,4 +8,4 @@
     register: os_info
     
   - debug:
-    	msg: "{{os_info.stdout_lines}}"
+    msg: "{{os_info.stdout_lines}}"

@@ -1,11 +1,3 @@
-- name: zzzz
-  hosts: backupserver  
-  become: true
-  tasks:
-  
-    
-
----
 - hosts: backupserver  
   become: true
   tasks:

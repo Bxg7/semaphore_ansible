@@ -1,6 +1,7 @@
----
-- name: Download Apache source file to /usr/local/src directory
-hosts: all
-tasks:
-- name: Download Apache tarball file
-  shell: wget https://dlcdn.apache.org/httpd/httpd-2.4.52.tar.gz
+- name: Check disk usage and grep for /dev/sda1
+  ansible.builtin.shell: df -h | grep /dev/sda1
+  register: disk_usage
+
+- name: Display output
+  ansible.builtin.debug:
+    var: disk_usage.stdout_lines

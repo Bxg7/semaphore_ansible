@@ -5,3 +5,5 @@
   - name: Run updates
     apt:
       upgrade: yes
+  - debug:
+          var: apt_result.stderr

@@ -3,11 +3,14 @@
   become: true
 
   tasks:
-  - shell: ls
-    register: apt_result
+  
   - name: Run updates
     apt:
       upgrade: yes
   
-  - debug:
-          var: apt_result.stderr
+ register: result
+  - name: List installed and updated packages
+    shell: grep -E "^$(date +%Y-%m-%d).+ (install|upgrade) " /var/log/dpkg.log |cut -d " " -f 3-5
+    register: result
+  - name: Show Output
+    debug: msg="{{ result.stdout_lines }}"

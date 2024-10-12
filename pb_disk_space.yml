@@ -1,4 +1,5 @@
 - name: whatever
+  hosts: all
   become: true
   tasks:
     - name: Check /tmp freespace

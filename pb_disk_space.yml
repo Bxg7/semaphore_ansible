@@ -3,7 +3,7 @@
   become: true
   tasks:
     - name: Check /tmp freespace
-      shell: df /tmp --output\=avail | tail -1
+      shell: df / --output\=avail | tail -1
       register: tmp_freespace
         
     - fail:

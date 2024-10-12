@@ -1,7 +1,9 @@
-- name: Check disk usage and grep for /dev/sda1
-  ansible.builtin.shell: df -h | grep /dev/sda1
-  register: disk_usage
+---
+# This playbook runs a basic DF command.
 
-- name: Display output
-  ansible.builtin.debug:
-    var: disk_usage.stdout_lines
+- hosts: nagios
+  #remote_user: root
+
+  tasks:
+  - name: find disk space available.
+    command: df -hPT

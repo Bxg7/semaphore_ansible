@@ -4,7 +4,7 @@
   tasks:
   - name: Slurp the rsync backup log
     slurp:
-      src: /root/rsynclogs/rsync-backup-f-2024-10-12.log
+      src: /root/rsynclogs/rsync.log
     register: slurpfile
 
   - debug: msg="{{ slurpfile['content'] | b64decode }}"

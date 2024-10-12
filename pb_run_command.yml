@@ -1,10 +1,6 @@
 ---
-- name: Shell module example
+- name: Download Apache source file to /usr/local/src directory
   hosts: all
   tasks:
-  
-  - name: Check system information
-    shell: "lsb_release -a"
-    register: os_info
-    
-  - msg: "{{os_info.stdout_lines}}"
+  	- name: Download Apache tarball file
+      shell: wget https://dlcdn.apache.org/httpd/httpd-2.4.52.tar.gz

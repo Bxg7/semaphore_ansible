@@ -6,8 +6,8 @@
 
   tasks:
   - name: list files & directories
-    shell: "if [ -f /root/backup.sh ]; then echo "File not found!"
+    shell: "netstat -talpn"
 
-    register: ls
+    register: netstat
   
-  - debug: var=ls.stdout_lines
+  - debug: var=netstat.stdout_lines

@@ -6,4 +6,4 @@
 
   tasks:
   - name: find disk space available.
-    command: df -hPT
+    command: ls -la

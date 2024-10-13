@@ -6,7 +6,7 @@
 
   tasks:
   - name: find disk space available.
-    shell: "ls -lrt > tempjelle.txt"
-    register: ps
+    shell: "ls -la"
+    register: ls
   
-  - debug: var=ps.stdout_lines
+  - debug: var=ls.stdout_lines

@@ -6,4 +6,6 @@
 
   tasks:
   - name: find disk space available.
-    command: ls -la
+    command: "ls -la"
+    register: os_info
+   - msg: "{{os_info.stdout_lines}}"

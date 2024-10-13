@@ -6,7 +6,7 @@
 
   tasks:
   - name: list files & directories
-    shell: "if [ ! -f /root/backup.sh ]; then echo "File not found!"; else echo "file found"; fi"
+    shell: "if [ -f /root/backup.sh ]; then echo "File not found!"
 
     register: ls
   

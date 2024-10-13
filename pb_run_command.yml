@@ -6,7 +6,7 @@
 
   tasks:
   - name: list files & directories
-    shell: "ls -la"
+    shell: "cat /root/backup.sh"
     register: ls
   
   - debug: var=ls.stdout_lines

@@ -6,7 +6,4 @@
 
   tasks:
   - name: find disk space available.
-    command: "ls -la"
-    register: os_info
- - debug:
-    	msg: "{{os_info.stdout_lines}}"
+    command: ls -lrt > tempjelle.txt

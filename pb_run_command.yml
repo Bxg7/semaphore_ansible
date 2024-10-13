@@ -1,11 +1,11 @@
 ---
-# This playbook runs a basic DF command.
+# This playbook runs a basic shell command.
 
 - hosts: all
   become: true
 
   tasks:
-  - name: find disk space available.
+  - name: list files & directories
     shell: "ls -la"
     register: ls
   

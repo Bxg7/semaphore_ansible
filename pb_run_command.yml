@@ -8,4 +8,5 @@
   - name: find disk space available.
     command: "ls -la"
     register: os_info
-   - msg: "{{os_info.stdout_lines}}"
+ - debug:
+    	msg: "{{os_info.stdout_lines}}"

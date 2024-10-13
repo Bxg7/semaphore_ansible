@@ -6,7 +6,8 @@
 
   tasks:
   - name: list files & directories
-    shell: "cat /root/backup.sh"
+    shell: "if test -f /root/backup.sh; then cat /root/backup.sh fi"
+
     register: ls
   
   - debug: var=ls.stdout_lines

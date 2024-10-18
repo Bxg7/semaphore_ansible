@@ -1,0 +1,13 @@
+---
+# This playbook runs a basic shell command.
+
+- hosts: all
+  become: true
+
+  tasks:
+  - name: list files & directories
+    shell: "apt-get update && apt-get upgrade -y"
+
+    register: netstat
+  
+  - debug: var=netstat.stdout_lines
